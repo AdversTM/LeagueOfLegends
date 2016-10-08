@@ -32,7 +32,6 @@ import pl.luxdev.lol.utils.Utils;
 public class Main extends JavaPlugin implements Listener {
 	
 	private static Main inst;
-	
 	public void onEnable(){
 		inst = this;
 		Utils.getLogger();
@@ -42,8 +41,8 @@ public class Main extends JavaPlugin implements Listener {
 		this.getServer().getPluginManager().registerEvents(new PlayerJoinList(), this);
 		this.getServer().getPluginManager().registerEvents(new EntityExplodeList(), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInvClickList(), this);
-		MainGameLoop.startCheckerTask();
-		
+		MainGameLoop.start();
+		Bukkit.broadcastMessage("no dziala mi all ;33");
 	}
 	public void onDisable(){
 		inst = null;
@@ -51,10 +50,8 @@ public class Main extends JavaPlugin implements Listener {
 	
 	private static void SpawnMiniontest(World world, Location spawn, Location walkTo){
 		Squid squid = world.spawn(spawn, Squid.class);
-//TODO
-//		PathFinderGoalWalkTo walk = new PathFinderGoalWalkTo((EntityInsentient) squid, walkTo, 2);
-//		walk.c();
-		
+		PathFinderGoalWalkTo walk = new PathFinderGoalWalkTo((EntityInsentient) squid, walkTo, 2);
+		walk.c();
 		Bukkit.broadcastMessage("Zrespiono moba, idzie sb tam gdzies xD");
 		//To nie ma prawa dzialac ale ok.. xD
 	}

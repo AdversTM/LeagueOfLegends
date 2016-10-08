@@ -25,15 +25,16 @@ public class PlayerJoinList implements Listener{
 		Player p = e.getPlayer();
 		User u = new User(p);
 		UserManager.addUser(u);
-		u.setChampion(ChampType.ZADNA);
-		p.sendMessage("Witaj " + p.getName() + " Twoja klasa zostala ustawiona na: " + u.getChampion());
+		u.setChampion(ChampType.NONE);
+		if(u.getChampion() == ChampType.NONE) p.sendMessage("Witaj " + p.getName() + "! Nie wybrales/as klasy.");
+		else p.sendMessage("Witaj " + p.getName() + " Twoja klasa zostala ustawiona na: " + u.getChampion());
 		addItems(p);
 		
 //		TitleAPI.sendTabTitle(p, "§7» Witaj na serwerze", "§6League Of Legends !");
 //		TitleAPI.sendFullTitle(p, 20*3, 20*20, 20*4, "§6%player% Witaj na serwerze Lola!", "§aWklad Prac: 35 KB, 28 Godzin, 3 Kawy, 3k lini kodu, Mapa: 3% Plugin: 15%");
 		TabTitle tabtitle = new TabTitle("§7» Witaj na serwerze", "§6League Of Legends!");
 		tabtitle.send(p);
-		Title title = new Title("§6%player% Witaj na serwerze Lola!", "§aWklad Prac: 35 KB, 28 Godzin, 3 Kawy, 3k lini kodu, Mapa: 3% Plugin: 15%", 3, 20, 4);
+		Title title = new Title("§6%player% Witaj na serwerze Lola!", "§aWklad Prac: 35 GB, 28 Godzin, 3 Kawy, 3k lini kodu, Mapa: 3% Plugin: 15%", 3, 20, 4);
 		title.send(p);
 		
 	}
