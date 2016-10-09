@@ -88,10 +88,10 @@ public class Utils {
 		Location loc = turret.getLocation();
 		Material mat = loc.subtract(0, 1,0).getBlock().getType();
 		switch(mat){
-			case DIAMOND_BLOCK: return LineType.Top;
-			case GOLD_BLOCK: return LineType.Bot;
-			case EMERALD_BLOCK: return LineType.Mid;
-			case COAL_BLOCK: return LineType.Baza;
+			case DIAMOND_BLOCK: return LineType.TOP;
+			case GOLD_BLOCK: return LineType.BOT;
+			case EMERALD_BLOCK: return LineType.MID;
+			case COAL_BLOCK: return LineType.BASE;
 		default:
 			break;
 		}
