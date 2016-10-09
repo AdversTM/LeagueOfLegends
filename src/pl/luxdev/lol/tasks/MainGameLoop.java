@@ -14,6 +14,11 @@ import pl.luxdev.lol.managers.UserManager;
 
 public class MainGameLoop implements Runnable{
 	
+	
+	/*
+	 * Ten kod nadaje sie do smietnika.. aktualnie czeka na jakiegos programiste/stow
+	 * i zostanie zmieniony bardzo...
+	 */
 	public static void start(){
 		Bukkit.getScheduler().runTaskTimer(Main.getInst(), new MainGameLoop(), 20, 15);
 	}

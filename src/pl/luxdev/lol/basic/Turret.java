@@ -18,6 +18,7 @@ public class Turret {
 	private Location location;
 	private boolean destroyed;
 	private Entity target;
+	private Hologram hologram;
 	
 	public Turret(String s){
 		FileConfiguration yml = ConfigManager.getCfg();
@@ -69,6 +70,12 @@ public class Turret {
 	}
 	public void setTarget(Entity t){
 		target = t;
+	}
+	public Hologram getHologram() {
+		return hologram;
+	}
+	public void setHologram(Hologram hologram) {
+		this.hologram = hologram;
 	}
 	
 }

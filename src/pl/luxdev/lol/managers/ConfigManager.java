@@ -10,17 +10,14 @@ import pl.luxdev.lol.basic.Turret;
 import pl.luxdev.lol.utils.Utils;
 
 public class ConfigManager {
-	
 private static FileConfiguration config = null;
-
-//TODO: £adowanie calego configu
 	
 	public static void load(){
 		FileManager.checkFiles();
 		config = Main.getInst().getConfig();
-//		loadTeams();
-//		loadTurrets();
-//		loadChampions();
+		loadTeams();
+		loadTurrets();
+		loadChampions();
 	}
 	
 	public static FileConfiguration getCfg(){
@@ -28,7 +25,7 @@ private static FileConfiguration config = null;
 		return config;
 	}
 
-/*	private static void loadTeams() {
+	private static void loadTeams() {
 		TeamManager.clearTeams();
 		for(String s : getCfg().getConfigurationSection("teams").getKeys(false)){
 			TeamManager.addTeam(new Team(s));
@@ -55,5 +52,4 @@ private static FileConfiguration config = null;
 		}
 		Utils.info("Zaladowano "+ChampionManager.getChampions().size()+" championow");	
 	}
-*/
 }
